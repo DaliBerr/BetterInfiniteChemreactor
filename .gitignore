@@ -1,0 +1,8 @@
+1.6/Assembiles/*
+*.dll
+*.sln
+*.pdb
+1.6/Source/obj/*
+*.pptx
+!BetterInfiniteChemreactor.dll
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <Switch_Mode>Switch Mode</Switch_Mode>
+    <BIC_Mode_Chemfuel>Chemfuel Mode</BIC_Mode_Chemfuel>
+    <BIC_Mode_Power>Power Mode</BIC_Mode_Power>
+    <BIC_CurrentMode>Current Mode: {0}</BIC_CurrentMode>
+    <BIC_PowerState>Grid Connection Status: {0}</BIC_PowerState>
+    <BIC_On>On</BIC_On>
+    <BIC_Off>Off</BIC_Off>
+    <!-- <BIC_PowerNow>Current Power: {0}</BIC_PowerNow> -->
+    <BIC_NextChemfuelIn>Next Production: {0}</BIC_NextChemfuelIn>
+    <Better_InfiniteReactor_Settings>“Better Infinite Reactor” Settings</Better_InfiniteReactor_Settings>
+    <Chemfuel_mode_Chemfuel_production_amount>Chemfuel Mode Production Amount</Chemfuel_mode_Chemfuel_production_amount>
+    <Power_mode_Chemfuel_production_amount>Power Mode Production Amount</Power_mode_Chemfuel_production_amount>
+    <Chemfuel_mode_power_consumption>Chemfuel Mode Power Consumption</Chemfuel_mode_power_consumption>
+    <Power_mode_power_output>Power Mode Power Output</Power_mode_power_output>
+    <Production_interval_days>Production Interval (Days)</Production_interval_days>
+    <Better_InfiniteReactor>Better Infinite Reactor</Better_InfiniteReactor>
+</LanguageData>

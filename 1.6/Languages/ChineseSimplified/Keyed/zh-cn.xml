@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <Switch_Mode>切换模式</Switch_Mode>
+    <BIC_Mode_Chemfuel>化学燃料模式</BIC_Mode_Chemfuel>
+    <BIC_Mode_Power>电力模式</BIC_Mode_Power>
+    <BIC_CurrentMode>当前模式：{0}</BIC_CurrentMode>
+    <BIC_PowerState>连接电网状态：{0}</BIC_PowerState>
+    <BIC_On>开启</BIC_On>
+    <BIC_Off>关闭</BIC_Off>
+    <!-- <BIC_PowerNow>当前功率：{0}</BIC_PowerNow> -->
+    <BIC_NextChemfuelIn>下次产出：{0}</BIC_NextChemfuelIn>
+    <Better_InfiniteReactor_Settings>“更好的无限反应釜”设置</Better_InfiniteReactor_Settings>
+    <Chemfuel_mode_Chemfuel_production_amount>化学燃料模式产出化合燃料量</Chemfuel_mode_Chemfuel_production_amount>
+    <Power_mode_Chemfuel_production_amount>电力模式产出化合燃料量</Power_mode_Chemfuel_production_amount>
+    <Chemfuel_mode_power_consumption>化学燃料模式耗电量</Chemfuel_mode_power_consumption>
+    <Power_mode_power_output>电力模式输出功率</Power_mode_power_output>
+    <Production_interval_days>生产间隔（天）</Production_interval_days>
+    <Better_InfiniteReactor>更好的无限反应釜</Better_InfiniteReactor>
+</LanguageData>

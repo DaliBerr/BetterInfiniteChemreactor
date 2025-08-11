@@ -1,0 +1,26 @@
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+
+      <!-- 删除原版 Chemfuel 生成组件 -->
+      <li Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]</xpath>
+      </li>
+
+
+        <!-- <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/spawnCount</xpath>
+          <value>0</value>
+        </li> -->
+      
+      <!-- 添加你自己的组件 -->
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="InfiniteChemreactor"]/comps</xpath>
+        <value>
+          <li Class="BetterInfChemreactor.CompProperties_MultiModeReactor"/>
+        </value>
+      </li>
+
+    </operations>
+  </Operation>
+</Patch>

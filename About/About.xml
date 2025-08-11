@@ -1,0 +1,21 @@
+<ModMetaData>
+  <name>Better_InfiniteReactor</name>
+  <author>Aquin</author>
+  <description>
+    这个mod让无限反应釜更加有用了，可以切换为化学燃料模式和电力模式以及调整他们的数值。
+    This mod makes the infinite reactor more useful by allowing it to switch between chemical fuel and power modes, as well as adjusting their values.
+  </description>
+  <packageId>Aquin.BetterInfiniteReactor</packageId>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>  
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <supportedVersions>
+
+    <li>1.6</li>
+  </supportedVersions>
+</ModMetaData>
