@@ -12,6 +12,7 @@
     <Defs Include="..\Defs\**\*" />
     <Patches Include="..\Patches\**\*" />
     <Langs Include="..\Languages\**\*" />
+    <Textures Include="..\Textures\**\*" />
     <!-- <Outside Include="..\Textures\**\*" /> -->
   </ItemGroup>
 
@@ -39,11 +40,11 @@
     <Message  Importance="high" 
               Text="Copying Langs to $(ModTargetPath)\$(ModVersion)" />
 
-    <!-- <Copy SourceFiles="@(Outside)"
-          DestinationFiles="@(Outside->'$(ModTargetPath)\%(RecursiveDir)%(Filename)%(Extension)')" 
+    <Copy SourceFiles="@(Textures)"
+          DestinationFiles="@(Textures->'$(ModTargetPath)\$(ModVersion)\Textures\%(RecursiveDir)%(Filename)%(Extension)')"
           OverwriteReadOnlyFiles="true" />
-    <Message  Importance="high" 
-              Text="Copying Outside to $(ModTargetPath)" /> -->
+    <Message Importance="high"
+              Text="Copying Textures to $(ModTargetPath)\$(ModVersion)" />
 
     <Copy SourceFiles="@(About)"
         DestinationFiles="@(About->'$(ModTargetPath)\About\%(RecursiveDir)%(Filename)%(Extension)')"
