@@ -1,84 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <OutputPath>../Assemblies/</OutputPath>
-    <AssemblyName>BetterInfiniteChemreactor</AssemblyName>
-    <RootNamespace>BetterInfiniteChemreactor</RootNamespace>
-    <ModTargetPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\$(AssemblyName)</ModTargetPath>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <About Include="..\..\About\**\*" />
-    <Defs Include="..\Defs\**\*" />
-    <Patches Include="..\Patches\**\*" />
-    <Langs Include="..\Languages\**\*" />
-    <Textures Include="..\Textures\**\*" />
-    <!-- <Outside Include="..\Textures\**\*" /> -->
-  </ItemGroup>
-
-  <PropertyGroup>
     <ModVersion>1.6</ModVersion>
+    <TargetFramework>net472</TargetFramework>
+
   </PropertyGroup>
+  <Import Project="../../Build/Mod.props" />
 
-  <Target Name = "AfterBuildCopy" AfterTargets="Build">
-
-    <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" 
-          DestinationFolder="$(ModTargetPath)\$(ModVersion)\Assemblies"
-          OverwriteReadOnlyFiles="true" />
-    <Message  Importance="high" 
-              Text="Copying $(OutputPath)$(AssemblyName).dll to $(ModTargetPath)" />
-  
-    <Copy SourceFiles="@(Defs)"
-          DestinationFiles="@(Defs->'$(ModTargetPath)\$(ModVersion)\Defs\%(RecursiveDir)%(Filename)%(Extension)')" 
-          OverwriteReadOnlyFiles="true" /> 
-    <Message  Importance="high" 
-              Text="Copying Defs to $(ModTargetPath)\$(ModVersion)" />
-
-    <Copy SourceFiles="@(Langs)"
-          DestinationFiles="@(Langs->'$(ModTargetPath)\$(ModVersion)\Languages\%(RecursiveDir)%(Filename)%(Extension)')" 
-          OverwriteReadOnlyFiles="true" /> 
-    <Message  Importance="high" 
-              Text="Copying Langs to $(ModTargetPath)\$(ModVersion)" />
-
-    <Copy SourceFiles="@(Textures)"
-          DestinationFiles="@(Textures->'$(ModTargetPath)\$(ModVersion)\Textures\%(RecursiveDir)%(Filename)%(Extension)')"
-          OverwriteReadOnlyFiles="true" />
-    <Message Importance="high"
-              Text="Copying Textures to $(ModTargetPath)\$(ModVersion)" />
-
-    <Copy SourceFiles="@(About)"
-        DestinationFiles="@(About->'$(ModTargetPath)\About\%(RecursiveDir)%(Filename)%(Extension)')"
-        OverwriteReadOnlyFiles="true" />
-    <Message Importance="high"
-           Text="Copying About to $(ModTargetPath)\About" />
-    
-    <Copy SourceFiles="@(Patches)"
-          DestinationFiles="@(Patches->'$(ModTargetPath)\$(ModVersion)\Patches\%(RecursiveDir)%(Filename)%(Extension)')" 
-          OverwriteReadOnlyFiles="true" />
-    <Message  Importance="high" 
-              Text="Copying Patches to $(ModTargetPath)\$(ModVersion)" />
-  </Target>
-
-
-
-  <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>../ExternalMods/Assembly-CSharp.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>../ExternalMods/UnityEngine.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>../ExternalMods/UnityEngine.CoreModule.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Lib.Harmony" Version="2.2.2"> 
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
-  </ItemGroup>
+  <Import Project="../../Build/Mod.targets" />
 </Project>

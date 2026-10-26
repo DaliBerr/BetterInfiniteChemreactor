@@ -274,38 +274,43 @@ namespace BetterInfChemreactor
 
             // 产出模式 Chemfuel 产量
             list.Label("Produce_mode_Chemfuel_production_amount".Translate() + $": {settings.ProduceMode_ChemOutCount}");
-            settings.ProduceMode_ChemOutCount = (int)list.Slider(settings.ProduceMode_ChemOutCount, 1, 1400);
+            settings.ProduceMode_ChemOutCount = Mathf.RoundToInt(list.Slider(settings.ProduceMode_ChemOutCount, 1, 1400));
             list.Gap();
 
             //产出模式 Neutroamine 产量
             list.Label("Produce_mode_Neutroamine_production_amount".Translate() + $": {settings.ProduceMode_NeutroamineOutCount}");
-            settings.ProduceMode_NeutroamineOutCount = (int)list.Slider(settings.ProduceMode_NeutroamineOutCount, 1, 800);
+            settings.ProduceMode_NeutroamineOutCount = Mathf.RoundToInt(list.Slider(settings.ProduceMode_NeutroamineOutCount, 1, 800));
             list.Gap();
 
             // 发电模式 Chemfuel 产量
             list.Label("Power_mode_Chemfuel_production_amount".Translate() + $": {settings.PowerMode_ChemOutCount}");
-            settings.PowerMode_ChemOutCount = (int)list.Slider(settings.PowerMode_ChemOutCount, 1, 600);
+            settings.PowerMode_ChemOutCount = Mathf.RoundToInt(list.Slider(settings.PowerMode_ChemOutCount, 1, 600));
             list.Gap();
 
             // 发电模式 Neutroamine 产量
             list.Label("Power_mode_Neutroamine_production_amount".Translate() + $": {settings.PowerMode_NeutroamineOutCount}");
-            settings.PowerMode_NeutroamineOutCount = (int)list.Slider(settings.PowerMode_NeutroamineOutCount, 1, 600);
+            settings.PowerMode_NeutroamineOutCount = Mathf.RoundToInt(list.Slider(settings.PowerMode_NeutroamineOutCount, 1, 600));
             list.Gap(); 
 
             // 产出模式耗电
             list.Label("ProduceMode_OutPowerCount".Translate()
                     + $": {settings.ProduceMode_OutPowerCount}");
-            settings.ProduceMode_OutPowerCount = (int)list.Slider(settings.ProduceMode_OutPowerCount, 1, 3000);
+            settings.ProduceMode_OutPowerCount = Mathf.RoundToInt(list.Slider(settings.ProduceMode_OutPowerCount, 1, 3000));
             list.Gap();
 
             // 发电模式输出功率
             list.Label("PowerMode_OutPowerCount".Translate()
                     + $": {settings.PowerMode_OutPowerCount}");
-            settings.PowerMode_OutPowerCount = (int)list.Slider(settings.PowerMode_OutPowerCount, 1, 3000);
+            settings.PowerMode_OutPowerCount = Mathf.RoundToInt(list.Slider(settings.PowerMode_OutPowerCount, 1, 3000));
+            list.Gap();
 
             // 生产间隔
-            list.Label("Production_interval_days".Translate() + $": {settings.ProductionInterval}");
-            settings.ProductionInterval = list.Slider(settings.ProductionInterval, 0.1f, 20f);
+            list.Label("Production_interval_days".Translate() + ": " + settings.ProductionInterval.ToString("0.0"));
+            // Keep the existing float setting and 0.1-day minimum for old
+            // configurations, but move the slider in whole tenths of a day.
+            int intervalTenths = Mathf.RoundToInt(list.Slider(
+                Mathf.RoundToInt(settings.ProductionInterval * 10f), 1, 200));
+            settings.ProductionInterval = intervalTenths / 10f;
 
             list.End();
             base.DoSettingsWindowContents(inRect);
